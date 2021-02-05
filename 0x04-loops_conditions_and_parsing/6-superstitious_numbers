@@ -4,7 +4,7 @@ burger=1
 while [ $burger -lt 21 ]
 do
     echo $burger
-    case $burger in
+    case "$burger" in
     4)
         echo "bad luck from China"
     ;;
@@ -15,5 +15,5 @@ do
         echo "bad luck from Japan"
     ;;
     esac
-  	((burger++)) 
+    ((burger++)) 
 done
