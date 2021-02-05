@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# For ls
+burger=$(ls)
+for beer in $burger
+do
+    echo "$beer" | cut -d"-" -f1
+done
