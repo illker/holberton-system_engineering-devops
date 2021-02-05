@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Clock 
+burger=0
+while [ $burger -le 12 ]
+do
+    echo "Hour:" $burger
+    beer=1
+    while [ $beer -lt 60 ]
+    do
+        echo $beer
+        ((beer++))
+    done
+  	((burger++))
+done
