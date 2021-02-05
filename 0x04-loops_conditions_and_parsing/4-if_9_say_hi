@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times and "Hi"
+burger=0
+while [ $burger -lt 10 ]
+do
+    if [ $burger -eq 9 ]
+    then
+        echo "Hi"
+    fi
+    ((burger++))
+    echo "Holberton School"
+done
