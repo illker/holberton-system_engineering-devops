@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#4 bad luck, 8 is your chance 
+burger=1
+while [ $burger -lt 11 ]
+do
+    if [ $burger -eq 4 ] 
+    then
+		echo "bad luck"
+	elif [ $burger -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+  	((burger++)) 
+done
