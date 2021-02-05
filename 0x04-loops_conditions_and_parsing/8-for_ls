@@ -3,5 +3,5 @@
 burger=$(ls)
 for beer in $burger
 do
-    echo "$beer" | cut -d"-" -f1
+    echo "$beer" | cut -d"-" -f2
 done
