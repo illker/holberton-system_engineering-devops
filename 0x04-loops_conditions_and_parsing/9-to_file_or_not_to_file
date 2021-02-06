@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# To file, or not to file
+burger="holbertonschool"
+if [ -e "$burger" ]
+then
+    echo "$burger file exists"
+    if [ -s "$burger" ]
+    then
+        echo "$burger file is not empty"
+    else
+        echo "$burger file is empty"
+    fi
+    if [ -f "$burger" ]
+    then
+        echo "$burger is a regular file"
+    fi
+else
+    echo "$burger file does not exist"
+fi
