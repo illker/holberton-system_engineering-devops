@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# FizzBuzz
+for ((burger=1; burger<101 ; burger++))
+do
+	if ((burger % 15 == 0))
+    then
+		echo "FizzBuzz"
+	elif ((burger % 3 == 0))
+    then
+		echo "Fizz"
+	elif ((burger % 5 == 0))
+    then
+		echo "Buzz" 
+  	else
+		echo "$burger"
+	fi
+done
