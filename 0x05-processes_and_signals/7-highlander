@@ -2,7 +2,7 @@
 # To infinity and beyond and I am invincible!!!
 
 trap "echo I am invincible!!!" SIGTERM
-while:
+while :
 do
     echo "To infinity and beyond"
     sleep 2
