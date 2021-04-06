@@ -4,6 +4,5 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-locationv='\404.html {\nroot /usr/share/nginx/html;\ninternal;}'
-sed -i "19a error_page 404 /404.html; location = $locationv" /etc/nginx/sites-available/default
+sed -i "19a error_page 404 /404.html; location = \404.html {\nroot /usr/share/nginx/html;\ninternal;}" /etc/nginx/sites-available/default
 service nginx restart
