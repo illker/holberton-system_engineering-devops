@@ -14,5 +14,4 @@ if [ $# -eq 3 ]; then
     scp -o StrictHostKeyChecking=no "$FILE" "${USER}@${IP}":~/
 else
     scp -o StrictHostKeyChecking=no -i "$SSHKEY" "$FILE" "${USER}@${IP}":~/
-
 fi
