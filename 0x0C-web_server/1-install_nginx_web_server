@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Nginx is installed in port 80 by default
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html
