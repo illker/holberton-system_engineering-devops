@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# World wide web
+
+burger ()
+{
+    beer="$1"
+    cheese="$2"
+    dig "$cheese.$beer" | awk '/ANSWER SECTION:/{getline; printf "The cheese %s is a %s record and points to %s\n", var, $4, $5}' var="$cheese"
+}
+
+for cheese in "www" "lb-01" "web-01" "web-02"
+do
+    if [ -z "$2" ] || [ "$2" == "$cheese" ] ;
+    then
+	burger "$1" "$cheese"
+    fi
+done
