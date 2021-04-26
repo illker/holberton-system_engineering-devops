@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Nginx is installed in port 80 by default
+# Block all incoming traffic but
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
