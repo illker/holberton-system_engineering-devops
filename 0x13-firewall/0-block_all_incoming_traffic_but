@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Nginx is installed in port 80 by default
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt install ufw​​​2​​​
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
+sudo ufw enable
