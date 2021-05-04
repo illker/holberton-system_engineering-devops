@@ -6,11 +6,11 @@ from sys import argv
 
 
 if __name__ == '__main__':
-
     em_id = argv[1]
     api_url = 'https://jsonplaceholder.typicode.com/users/' + em_id
     r = requests.get(api_url)
     name = r.json().get('name')
+
     url = 'https://jsonplaceholder.typicode.com/users/' + em_id + '/todos'
     r2 = requests.get(url).json()
     burger = [bu for bu in r2 if bu['completed'] is True]
