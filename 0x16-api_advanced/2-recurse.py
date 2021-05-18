@@ -3,23 +3,29 @@
 
 import json
 import requests
+from requests.api import request
 
 
 def recurse(subreddit, hot_list=[]):
     """Recurse it!"""
-    burger = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
+    burger = 'https://www.reddit.com/r/' + subreddit
+    burger += '/hot.json?limit=100&after=' + page
     h = {'User-Agent': 'linux: burger:v1.0.0 (by /u/da2a)'}
-    request = requests.session()
-    request.headers = h
-    p = {'limit': 100, 'after': after}
-    r = request.get(url, params=p)
-    # print (r.json())
-    if r.status_code == 200:
-        after = r.json().get('data').get('after')
-        for hot in r.json().get('data').get('children'):
-            hot_list.append(hot.get('data').get('title'))
-        if after is not None:
-            return recurse(subreddit, hot_list, after)
-        return hot_list
+    if len(hot_list) != 0:
+        page = hot_list[0]
     else:
+        page = ''
+        hot_list.append('')
+    request = requests.get(burger, headers=h)
+    if request.status_code != 200:
         return None
+    else:
+        d = request.json().get("data")
+        a = d.get("after")
+        hot_list[0] = a
+        c = d.get("children")
+        for child in c:
+            hot_list.append(child.get("data").get("title"))
+        if a is None:
+            return hot_list[1:]
+        return recurse(subreddit, hot_list)
